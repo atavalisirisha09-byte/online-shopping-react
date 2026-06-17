@@ -2,7 +2,14 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
 import AddToCart from "./components/AddToCart";
-
+import kurta from "./assets/kurta.webp";
+import chappal from "./assets/chappal.png";
+import kid1 from "./assets/kid1.png";
+import kid2 from "./assets/kid2.png";
+import kid3 from "./assets/kid3.webp";
+import shoes from "./assets/shoes.png";
+import shortkurta from "./assets/short kurta.png";
+import trouser from "./assets/trouser.png";
 import { Routes, Route, Link } from "react-router-dom";
 
 import sweater from "./assets/sweter.png";
@@ -41,7 +48,7 @@ const App = () => {
   delivery:"free delivary"
 },
 {id:2,
-  imgSrc:"./src/assets/kurta.webp",
+  imgSrc:kurta,
                name:"Women's Royon Blend Solid Straight Kurta",
                                price:1999,
                                shop:"H&M",
@@ -53,7 +60,7 @@ const App = () => {
                                offer:true,
 },
 {            id:3,
-             imgSrc:" ./src/assets/chappal.png " ,
+             imgSrc:chappal ,
              name:"Bata Women ",
                                price:1499,
                                 shop:"H&M",
@@ -66,7 +73,7 @@ const App = () => {
 },
 {
                                id:4,
-                           imgSrc:"./src/assets/shoes.png", 
+                           imgSrc:shoes, 
                            name:"Asian Men's Wonder-13 Sports Runnin Shoes" ,
                                price:599,
                                 delivery:"₹77 Delivery",
@@ -78,7 +85,7 @@ const App = () => {
                                  offer:true,
 },
 {            id:5,
-             imgSrc:"./src/assets/short kurta.png" ,
+             imgSrc:shortkurta ,
              name:"Brownverse Women's Embroidered Short kurti",
                                price:599,
                                 shop:"H&M",
@@ -89,7 +96,7 @@ const App = () => {
                                category:"women",
 },
 {  id:6,
-  imgSrc:"./src/assets/trouser.png", name:"Urbano Fashion Men's Loose Baggy Fit Solid Chino Trousers  ",
+  imgSrc:trouser, name:"Urbano Fashion Men's Loose Baggy Fit Solid Chino Trousers  ",
                                price:999,
                                 shop:"Trends",
                                rating:5,
@@ -98,7 +105,7 @@ const App = () => {
                                  offer:true,
 },
 {  id:7,
-  imgSrc:"./src/assets/kid1.png", name:"Kenzo Kids-puff-sleeve logo-print tracksuit- kids-Cotton-18 mths-Pink ",
+  imgSrc:kid1, name:"Kenzo Kids-puff-sleeve logo-print tracksuit- kids-Cotton-18 mths-Pink ",
                                price:1300,
                                 shop:"Trends",
                                rating:5,
@@ -108,7 +115,7 @@ const App = () => {
                                   offer:false,
 },
 {  id:8,
-  imgSrc:"./src/assets/kid2.png", name:"Kenzo Kids-tiger-pocket dungarees set-kinds-Cotton -18 mths-Blue ",
+  imgSrc:kid2, name:"Kenzo Kids-tiger-pocket dungarees set-kinds-Cotton -18 mths-Blue ",
                                price:1242,
                                 shop:"H&M",
                                rating:5,
@@ -119,7 +126,7 @@ const App = () => {
                                  offer:true,
 },
 {  id:9,
-  imgSrc:"./src/assets/kid3.webp", name:"Kidbea Kids Elegant Comfortable Summer Wear Shirt & Pant Co-Ord Se",
+  imgSrc:kid3, name:"Kidbea Kids Elegant Comfortable Summer Wear Shirt & Pant Co-Ord Se",
                                price:799,
                                 shop:"H&M",
                                 discount:16,
