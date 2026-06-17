@@ -1,0 +1,311 @@
+h1{
+ Background: oklch(54.2% 0.034 322.5);
+text-align:center;
+
+padding:15px;
+color: #ffffff;
+}
+
+
+
+ /* body{ 
+  height:100vh;
+ 
+  background:linear-gradient(to left,rgb(236, 230, 231),rgb(223, 208, 208)); 
+   
+}  */
+
+/* body{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+} */
+
+body{
+   height:100vh;
+ 
+  background:linear-gradient(to left,rgb(236, 230, 231),rgb(223, 208, 208)); 
+}
+
+
+
+/*body{ 
+  height:100vh; 
+  background:linear-gradient(pink,white); 
+   
+}*/
+/* .nav{
+   display: flex;
+ font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+
+}
+.nav li a {
+  color: #65150e;
+   text-decoration: none;
+   font-size: 16px;
+  transition: 0.3s;
+}
+.nav li a:hover {
+  color: #ee6b2e;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container{
+  display: flex;;
+  justify-content: center;
+}
+.button{
+  border:none;
+  background-color: rgb(184, 9, 184);
+  color:white;
+  font-weight: bolder;
+  padding:10px;
+  margin:10px;
+  cursor:hover;
+  border-radius: 10px;
+}
+.button:hover{
+  background-color: oklch(54.2% 0.034 322.5);; 
+  color: white;
+  padding:12px;
+}
+img{
+  width:150px;
+  height:150px;
+}
+
+.box1 {
+  display: flex;
+  flex-wrap: wrap;          /* allows items to move to next line */
+  justify-content: center;  /* center items horizontally */
+  gap: 20px;                /* space between cards */
+  padding: 20px;
+}
+
+
+
+
+.card {
+  width: 240px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card h3 {
+  font-size: 16px;
+  
+  
+  overflow: hidden;
+}
+.filterbtn{
+border:none;
+  background-color: rgb(105, 59, 34);
+  color:white;
+  font-weight: bolder;
+  padding:10px;
+  margin:10px;
+  cursor:hover;
+  border-radius: 10px;
+}
+.filterbtn:hover{
+  background-color: rgb(211, 162, 102);
+}
+
+
+
+
+
+
+
+.loginBtn{
+  background-color:oklch(86.5% 0.127 207.078);
+  color:white;
+  padding:10px 20px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  margin-left:80px;
+  color:#121212;
+   transition:0.3s;
+  
+  
+}
+
+.loginBtn:hover{
+  background-color: oklch(78.9% 0.154 211.53);
+
+  transform: scale(1.10);
+}
+
+
+/* todayyy  */
+
+
+.cart-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  background-color: white;
+  
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item h4 {
+  margin: 0;
+}
+
+.cart-item button {
+  background-color:  oklch(54.2% 0.034 322.5);
+  color: whitesmoke;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  background-color: orange;
+  color: black;
+}
+
+
+button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #eee;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color:oklch(54.2% 0.034 322.5);
+  color: white;
+}
+
+
+.navbar {
+  display: flex;
+  gap: 20px;
+  padding: 15px 20px;
+  
+  align-items: center;
+}
+
+.navlink {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.navlink:hover {
+  background-color:  oklch(54.2% 0.034 322.5);
+  color: whitesmoke;
+}
+
+
+
+
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.login-modal {
+  background: white;
+  width: 350px;
+  padding: 30px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.login-modal h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: oklch(71.1% 0.019 323.02)
+}
+
+.login-btn {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: oklch(54.2% 0.034 322.5);;
+  color: black;
+}
+
+.blue{
+  color:blue;
+}
