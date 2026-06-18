@@ -310,8 +310,8 @@ button:hover {
   color:blue;
 }
 .welcome-msg {
-  background: #d4edda;
-  color: #155724;
+  
+  color: black;
   padding: 10px;
   margin: 10px;
   border-radius: 6px;
