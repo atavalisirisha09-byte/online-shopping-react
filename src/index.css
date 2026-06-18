@@ -309,3 +309,12 @@ button:hover {
 .blue{
   color:blue;
 }
+.welcome-msg {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+}

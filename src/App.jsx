@@ -17,7 +17,7 @@ import sweater from "./assets/sweter.png";
 const App = () => {
   // ---------------- CART ----------------
   const [cart, setCart] = useState([]);
-
+const [error, setError] = useState("");
   // ---------------- FILTER ----------------
   const [filter, setFilter] = useState("all");
 
@@ -189,27 +189,60 @@ const filteredproducts = products.filter((item) => {
   // ---------------- LOGIN ----------------
   const validUser = "sirisha";
   const validPassword = "1234";
+const [welcomeMsg, setWelcomeMsg] = useState("");
+const signupHandler = () => {
+  if (!username.trim()) {
+    alert("Username is required");
+    return;
+  }
 
-  const loginHandler = () => {
-    if (!username || !password) {
-      alert("All fields required");
-      return;
-    }
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters");
+    return;
+  }
 
-    if (username === validUser && password === validPassword) {
-      setIsLoggedIn(true);
-      setShowLogin(false);
+  localStorage.setItem("username", username);
+  localStorage.setItem("password", password);
 
-      //  RESUME ACTION AFTER LOGIN
-      if (pendingProduct) {
-        handleAddToCart(pendingProduct);
-        setPendingProduct(null);
-      }
-    } else {
-      alert("Invalid Credentials");
-    }
-  };
+  alert("Account Created Successfully");
+};
 
+
+
+
+const loginHandler = () => {
+  setError("");
+
+  if (!username.trim()) {
+    setError("Username is required");
+    return;
+  }
+
+  if (!password.trim()) {
+    setError("Password is required");
+    return;
+  }
+
+  const validUser = localStorage.getItem("username");
+  const validPassword = localStorage.getItem("password");
+
+  if (
+  username === validUser &&
+  password === validPassword
+) {
+  setWelcomeMsg(`Welcome ${username}!`);
+
+  setIsLoggedIn(true);
+  setShowLogin(false);
+
+  if (pendingProduct) {
+    handleAddToCart(pendingProduct);
+    setPendingProduct(null);
+  }
+} else {
+    setError("Invalid Username or Password");
+  }
+};
   // ---------------- CART QTY ----------------
   const increaseQty = (id) => {
     setCart(
@@ -236,38 +269,43 @@ const filteredproducts = products.filter((item) => {
   // ---------------- UI ----------------
   return (
   <div>
+    <Header />
 
-     <h1>TEST 123 </h1>
-<Header />
+    {isLoggedIn && (
+      <div className="welcome-msg">
+        Welcome {username}!
+      </div>
+    )}
+
     {/* NAVBAR */}
-     <nav className="navbar">
-      <Link className="navlink" to="/">Home</Link>
-      <Link className="navlink" to="/cart">Cart</Link>
+    <nav className="navbar">
+      <Link className="navlink" to="/">
+        Home
+      </Link>
+
+      <Link className="navlink" to="/cart">
+        Cart
+      </Link>
     </nav>
 
     {/* ROUTES */}
     <Routes>
-
-      {/*  HOME PAGE */}
       <Route
         path="/"
         element={
           <div>
-            
-               
-            
-
             <button onClick={() => setFilter("all")}>All</button>
             <button onClick={() => setFilter("men")}>Men</button>
             <button onClick={() => setFilter("women")}>Women</button>
             <button onClick={() => setFilter("kids")}>Kids</button>
 
- <input
-        type="text"
-        placeholder="Search products..."
-        value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
-      />
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+            />
+
             <main className="box1">
               {filteredproducts.map((item) => (
                 <ProductCard
@@ -281,7 +319,6 @@ const filteredproducts = products.filter((item) => {
         }
       />
 
-      {/* 🛒 CART PAGE */}
       <Route
         path="/cart"
         element={
@@ -292,32 +329,41 @@ const filteredproducts = products.filter((item) => {
           />
         }
       />
-
     </Routes>
 
-    {/* LOGIN POPUP (still global) */}
     {showLogin && (
-       <div  className="login-overlay">
-
-        <div   className="login-modal">
+      <div className="login-overlay">
+        <div className="login-modal">
           <h2>Login</h2>
 
           <input
-             className="login-input"
+            className="login-input"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
 
           <input
-           className="login-input"
+            className="login-input"
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button onClick={loginHandler}>Login</button>
+          {error && (
+            <p style={{ color: "red" }}>
+              {error}
+            </p>
+          )}
+
+          <button onClick={signupHandler}>
+            Sign Up
+          </button>
+
+          <button onClick={loginHandler}>
+            Login
+          </button>
         </div>
       </div>
     )}
