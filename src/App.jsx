@@ -236,6 +236,8 @@ const filteredproducts = products.filter((item) => {
   // ---------------- UI ----------------
   return (
   <div>
+
+     <h1>TEST 123 </h1>
 <Header />
     {/* NAVBAR */}
      <nav className="navbar">
